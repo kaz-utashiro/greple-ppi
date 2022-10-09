@@ -42,6 +42,7 @@
       },
       "runtime" : {
          "requires" : {
+            "App::Greple" : "8.58",
             "PPI" : "0",
             "Term::ANSIColor::Concise" : "2.01",
             "Text::ANSI::Fold" : "2.16",

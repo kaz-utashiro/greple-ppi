@@ -12,7 +12,35 @@ Version 0.01
 
 =head1 DESCRIPTION
 
-Greple module to use Perl PPI module.
+Greple module to use Perl PPI module.  This is just a work in
+progress experimental module.
+
+=head1 OPTIONS
+
+=over 7
+
+=item B<--dumper>
+
+Dump PDOM trees produced by PPI::Dumper module.
+
+=item B<--cdumper>
+
+Colorize dumped data.
+
+=item B<--top>
+
+Make search data block top level object.
+
+=item B<--state>
+
+Make search data block PPI::Statement.
+
+=item B<--prune>=I<type>
+
+Remove I<type> object from tree.  This option have to be used before
+any other options.
+
+=back
 
 =head1 AUTHOR
 
@@ -89,7 +117,7 @@ sub ppi_prune {
 
     update_doc();
     for my $class (grep { $arg{$_} } keys %arg) {
-	$doc->prune($class);
+	my $result = $doc->prune($class);
     }
 }
 
@@ -194,9 +222,10 @@ sub offset {
     } @_;
 }
 
-use Term::ANSIColor qw(:constants);
+use Term::ANSIColor::Concise qw(ansi_code);
+use Text::ANSI::Fold qw(:regex);
 
-my $color_re = qr{ \e \[ [\d;]* m }x;
+my $reset = ansi_code('Z');
 my $sp = '  ';
 my $sp_re = qr/$sp/;
 
@@ -207,13 +236,12 @@ sub colordump {
 	my $esc = $+{esc};
 	my @space = $+{space} =~ /($sp_re)/g;
 	splice @esc, +@space;
-	$esc[@space] = $esc . $sp . RESET if $esc;
+	$esc[@space] = $esc . $sp . $reset if $esc;
 	print map { $esc[$_] || $space[$_] } 0 .. $#space;
 	print $esc, $_;
     }
 }
 
-my $reset = RESET;
 my $mark = "\001";
 
 sub colordump_regex {

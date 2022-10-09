@@ -42,6 +42,9 @@
       },
       "runtime" : {
          "requires" : {
+            "PPI" : "0",
+            "Term::ANSIColor::Concise" : "2.01",
+            "Text::ANSI::Fold" : "2.16",
             "perl" : "5.014"
          }
       },

@@ -6,3 +6,4 @@ module_maker = "ModuleBuildTiny"
 
 [release]
 branch = "main"
+do_not_upload_to_cpan = 1

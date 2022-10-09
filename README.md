@@ -1,22 +1,27 @@
+[![Actions Status](https://github.com/kaz-utashiro/greple-ppi/workflows/test/badge.svg)](https://github.com/kaz-utashiro/greple-ppi/actions) [![MetaCPAN Release](https://badge.fury.io/pl/App-Greple-ppi.svg)](https://metacpan.org/release/App-Greple-ppi)
 # NAME
 
-App::Greple::ppi - It's new $module
+ppi - Greple module to use Perl PPI module
 
 # SYNOPSIS
 
-    use App::Greple::ppi;
+greple -Mppi
+
+# VERSION
+
+Version 0.01
 
 # DESCRIPTION
 
-App::Greple::ppi is ...
-
-# LICENSE
-
-Copyright (C) Kaz Utashiro.
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+Greple module to use Perl PPI module.
 
 # AUTHOR
 
-Kaz Utashiro <kaz@utashiro.com>
+Kazumasa Utashiro
+
+# LICENSE
+
+Copyright 2022 Kazumasa Utashiro
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.

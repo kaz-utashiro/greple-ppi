@@ -6,11 +6,30 @@ ppi - Greple module to use Perl PPI module
 
 greple -Mppi
 
+=head1 VERSION
+
+Version 0.01
+
 =head1 DESCRIPTION
+
+Greple module to use Perl PPI module.
+
+=head1 AUTHOR
+
+Kazumasa Utashiro
+
+=head1 LICENSE
+
+Copyright 2022 Kazumasa Utashiro
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
 
 package App::Greple::ppi;
+
+our $VERSION = '0.01';
 
 use strict;
 use warnings;
@@ -240,7 +259,7 @@ option	--cdump --dump \
 	--of &colordump --no-line-number --uc --color=always \
 	// color version
 
-option	--dumper --dump --re \A(?=never)(?=match) --need 0 --all \
+option	--dumper --dump --re \A(?!) --need 0 --all \
 						// dump all
 option	--cdumper --cdump \
 	--dump --re '^ *\KPPI::\S+' --need 0 --all \
